@@ -23,12 +23,12 @@ def browser_access(request):
     if browser =="chrome":
         chrome_options = Options()
         chrome_options.add_experimental_option("detach", True)
-        service_chrome = Service('C:\\Users\\Anil-Teju\\PycharmProjects\\drivers\\chromedriver.exe')
+        service_chrome = Service('./drivers/chromedriver.exe')
         driver = webdriver.Chrome(service=service_chrome,options=chrome_options)
     elif browser == "firefox":
         pass #code for gecko webdriver
     elif browser == "edge":
-        service_obj = Service('C:\\Users\\Anil-Teju\\PycharmProjects\\drivers\\msedge.exe')
+        service_obj = Service('./drivers/msedge.exe')
         driver = webdriver.Edge(service=service_obj)
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     driver.maximize_window()
