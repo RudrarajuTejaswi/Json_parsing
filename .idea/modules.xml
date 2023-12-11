@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pythonAutomationSelenium.iml" filepath="$PROJECT_DIR$/.idea/pythonAutomationSelenium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jsonParsing.iml" filepath="$PROJECT_DIR$/.idea/jsonParsing.iml" />
     </modules>
   </component>
 </project>

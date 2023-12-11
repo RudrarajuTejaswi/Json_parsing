@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import json
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+simple_json = '{"name": "Tejaswi","languages": [ "Java", "Python"]}'
+#'loads' - for plain json, 'load'- for external json file
+json_dict = json.loads(simple_json)
+print(json_dict.get("languages")[1])
 
+#parsing external json file
+with open('json_data/data.json') as json_file:
+    external_json_file_data = json.load(json_file)
+    # getting batter_list from the external json
+    batter_list = external_json_file_data.get('batters').get('batter')
+    for batter in batter_list:
+        if batter.get('id') == '1003':
+            print(batter.get('type'))
+            assert batter.get('type') == "Blueberry"
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#comparing two dicts
+#used same data.json but chnged few values and saved as data2.json
+with open('json_data/data2.json') as diff_json:
+    diff_json_data = json.load(diff_json)
+    assert  not diff_json_data == external_json_file_data
